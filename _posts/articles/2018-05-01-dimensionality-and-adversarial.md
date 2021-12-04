@@ -29,7 +29,7 @@ So, an 8 has a local set of other, valid 8s, near it that looks like a 7 to 10 d
 
 ### Toroidal Example 
 
-<iframe src="https://csdevrie.github.io/aiv_site/public/material/dimensionality_pointcloud.html" frameborder="0" marginwidth="0" marginheight="0" width="100%" height="500" scrolling="no"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/public/material/dimensionality_pointcloud.html" frameborder="0" marginwidth="0" marginheight="0" width="100%" height="500" scrolling="no"></iframe>
 
 In the above example we've sampled our data from a torus with relatively little noise. This is a 2 dimensional surface embedded in 3 dimensions. So, locally we have 2 degrees of freedom to manipulate, giving us a 2 dimensional disk around our chosen point. If you hide the main torus you can see the little area around the disk approximates a plane, it's pretty flat. What we can do to figure out the disk associated to the point is a local principal component analysis. That is we do a PCA on the nearest few hundred points. This will tell us which directions the local neighborhood varies most in.
 
@@ -44,7 +44,7 @@ From the literature it seems that the adversarial examples might form their own 
 It’s basically impossible to visualize how these low dimensional spaces look, but think of the 20 adversarial directions as $$2^{20}$$ “bad” combinations in the above combinatorial example. So the chance of hitting a bad combination is $$\frac{2^{20}}{2^{784}} = 2^{-764}$$, or basically 0. The probability of randomly hitting these is incredibly low, but there are many adversarial generation techniques that could unveil them to an attacker. You don’t know what technique will be used to generate the adversarial sample and you don’t know if they have a new one that you don’t know about. So, the challenge is to train a deep learning system that doesn’t have any adversarial examples close to good data.
 
 ### Another Toroidal Example 
-<iframe src="https://csdevrie.github.io/aiv_site/public/material/adversarial_pointcloud.html" frameborder="0" marginwidth="0" marginheight="0" width="100%" height="500" scrolling="no"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/public/material/adversarial_pointcloud.html" frameborder="0" marginwidth="0" marginheight="0" width="100%" height="500" scrolling="no"></iframe>
 
 This time if we look at a low dimensional example where we have 2 point clouds for 2 classes, a green class and a blue class. These two point clouds are all that the classifier ever saw while training. We'd hope that the classifier learns two tori, but that's not what happens. Even in perfect [conditions](https://arxiv.org/abs/1801.02774) the classifiers we use just don't pay attention to the shape of the data very well. The adversarial examples (in red) near the point we're interested in (indicated by the disk) form a 1 dimensional line, with a bit of noise. This could have been caused by many different artifacts in the interaction between the data and the classifier. Since there's no data sampled from this area for training, there's noting to correct the classifier when we input them. This is the low dimensional case, the data in the high dimensional case is far more sparse and there's many more nooks and cranies for these adversarial examples to live. 
 

@@ -1,6 +1,6 @@
 ---
 title: Leadership Team
-layout: splash
+layout: single
 permalink: /leadership_team/
 ---
 

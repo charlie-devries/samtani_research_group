@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Articles
-permalink: /articles/
+title: Press
+permalink: /press/
 ---
 
