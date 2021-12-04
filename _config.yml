@@ -288,7 +288,3 @@ defaults:
       share: true
       related: true
 
-collections:
-  officers:
-    permalink: /officers/
-    output: true
